@@ -1,0 +1,17 @@
+{
+  "name": "read_file_sync",
+  "version": "1.0.0",
+  "description": "lendo arquivos sincronos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sync",
+    "read",
+    "file",
+    "javascript"
+  ],
+  "author": "Nailton",
+  "license": "GPL-3.0"
+}

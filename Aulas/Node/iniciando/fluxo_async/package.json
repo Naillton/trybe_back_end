@@ -1,0 +1,18 @@
+{
+  "name": "async_read",
+  "version": "1.0.0",
+  "description": "fluxo assincrono com readFile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "fluxo",
+    "async",
+    "readFile",
+    "javascript"
+  ],
+  "author": "Nailton",
+  "license": "GPL-3.0"
+}
