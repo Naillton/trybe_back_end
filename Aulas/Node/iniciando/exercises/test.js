@@ -25,4 +25,12 @@ describe('testando um numero se e', function(){
         expect(result).to.be.equal('neutro');
     });
   });
+
+  describe('se nao e', function(){
+    it('numero', function(){
+        const result = number('s');
+    
+        expect(result).to.be.equal('o valor deve ser um número');
+    });
+  });
 });

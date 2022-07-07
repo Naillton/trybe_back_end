@@ -1,26 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const rescue = require('express-rescue');
 const errorMiddleware = require('./middlewares/error');
-const Author = require('./controllers/Authors');
-const Books = require('./controllers/Books');
+const BookRoute = require('./routes/Books');
+const AuthorRoute = require('./routes/Authors');
 
 const app = express();
 
 app.use(errorMiddleware);
 app.use(bodyParser.json());
 
-app.get('/authors', rescue(Author.getAll));
+app.use('/authors', AuthorRoute);
 
-app.get('/books', rescue(Books.getAll));
-
-app.get('/books/:id', rescue(Books.getById));
-
-app.get('/books/author/:id', rescue(Books.getByAuthorId));
-
-app.get('/authors/:id', rescue(Author.findById));
-
-app.post('/authors', rescue(Author.createAuthor));
+app.use('/books', BookRoute);
 
 const PORT = 3000;
 
