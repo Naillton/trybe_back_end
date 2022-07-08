@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User } = require('../database/models');
 
 const validUser = async (_req, res, next) => {
   const users = await User.findAll();
