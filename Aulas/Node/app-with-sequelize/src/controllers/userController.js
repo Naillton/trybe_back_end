@@ -1,43 +1,34 @@
-const { User } = require('../database/models');
+const userService = require('../services/userService');
 
 const userController = {
   async getUser(_req, res) {
-    const users = await User.findAll();
+    const users = await userService.getUser();
     return res.status(200).json(users);
   },
 
   async getUserById(req, res) {
     const { id } = req.params;
     // const [ email ] = req.query;
-    const user = await User.findOne({ where: { id }});
+    const user = await userService.getUserById(id);
     return res.status(200).json(user);
   },
 
   async createUser(req, res) {
     const { fullName, email } = req.body;
-    const newUser = await User.create({ fullName, email });
-
+    const newUser = await userService.createUser({ fullName, email });
     return res.status(201).json(newUser);
   },
 
   async editUser(req, res) {
     const { fullName, email } = req.body;
     const { id } = req.params;
-
-    await User.update(
-      { fullName, email },
-      { where: { id } },
-    );
-
+    await userService.editUser(id, fullName, email);
     return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
   },
 
   async delUser(req, res) {
     const { id } = req.params;
-    await User.destroy(
-      { where: { id } },
-    );
-    
+    await userService.delUser(id);
     return res.status(200).json({ message: 'Usuário excluído com sucesso!' });
   }
 };

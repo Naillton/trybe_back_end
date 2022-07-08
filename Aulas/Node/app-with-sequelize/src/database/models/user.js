@@ -3,8 +3,12 @@ const User = (sequelize, DataTypes) => {
     fullName: DataTypes.STRING,
     phone_num: DataTypes.STRING,
     email: DataTypes.STRING,
-    RG: DataTypes.INTEGER,
-  });
+  },
+  {
+    underscored: true,
+    tableName: 'Users',
+  }
+  );
 
   return User;
 }

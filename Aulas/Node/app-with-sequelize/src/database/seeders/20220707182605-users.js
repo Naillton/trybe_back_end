@@ -5,20 +5,18 @@ module.exports = {
     await queryInterface.bulkInsert('Users',
     [
       {
-        fullname: 'Leonardo',
+        full_name: 'Leonardo',
         email: 'leo@test.com',
         phone_num: '(81) 99999-9999',
-        RG: 783747642,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       {
-        fullname: 'JEduardo',
+        full_name: 'JEduardo',
         email: 'edu@test.com',
         phone_num: '(81) 88888-8888',
-        RG: 367624294,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     ], {});
   },
