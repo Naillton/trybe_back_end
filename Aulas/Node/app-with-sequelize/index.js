@@ -1,10 +1,7 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const userRouter = require('./src/routes/userRouter');
+require('express-async-errors');
 
-const app = express();
+const app = require('./app');
 
-app.use(bodyParser.json());
-app.use('/users', userRouter);
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => console.log('rodando na porta 3000'));
+app.listen(PORT, () => console.log('app listen port 3000'));
