@@ -11,8 +11,8 @@ const userService = {
     return user;
   },
 
-  async createUser(name, email) {
-    const user = await User.create({name, email});
+  async createUser(fullName, email) {
+    const user = await User.create({fullName, email});
     return user;
   },
 

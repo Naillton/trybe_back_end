@@ -15,7 +15,8 @@ const userController = {
 
   async createUser(req, res) {
     const { fullName, email } = req.body;
-    const newUser = await userService.createUser({ fullName, email });
+    const newUser = await userService.createUser(fullName, email);
+    console.log(newUser);
     return res.status(201).json(newUser);
   },
 
